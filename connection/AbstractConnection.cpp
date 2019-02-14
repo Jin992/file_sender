@@ -53,7 +53,7 @@ namespace filesender {
             // we need this step because read will be wait until it get full bufer
             inbound_data_.resize(inbound_data_size);
             // Read data
-            boost::asio::read(socket_, boost::asio::buffer(inbound_data_));
+            boost::asio::read(socket(), boost::asio::buffer(inbound_data_));
             // Checking incoming request for errors or end of stream
             // Write received data to string
             std::string archive_data(&inbound_data_[0], inbound_data_.size());
@@ -87,7 +87,7 @@ namespace filesender {
             std::vector<boost::asio::const_buffer> buffers;
             buffers.push_back(boost::asio::buffer(outbound_header_));
             buffers.push_back(boost::asio::buffer(outbound_data_));
-            boost::asio::write(socket_, buffers);
+            boost::asio::write(socket(), buffers);
         }
 
         void AbstractConnection::send_file_(const std::string &file_name, size_t chunk_size) {

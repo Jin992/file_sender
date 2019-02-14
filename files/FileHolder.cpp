@@ -60,6 +60,7 @@ namespace filesender {
 			}
 			if  (!file_.read(buf_, chunk_size)) {
 				if (file_.gcount() > 0) {
+					buf = std::string(buf_, chunk_size);
 					return file_.gcount();
 				}
 				return  0;

@@ -24,6 +24,7 @@ namespace filesender{
 		// if zero system apply max queue size
 		void listen(int);
 		void set_mime_types(const std::vector<std::string> &);
+		int get_connection_timeout() const;
 
 		// Starting main loop
 		void run();

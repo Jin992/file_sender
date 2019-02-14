@@ -27,6 +27,8 @@ int main()
         Log().info("Setting listen queue [success]");
         Log().info("Starting main loop.");
         server.set_mime_types(config.get_mime_types());
+        Log().info("Connection timeout " + std::to_string(config.get_timeout()) + " seconds.");
+        Log().info("After " + std::to_string(config.get_timeout()) + " seconds without activity connection would be terminated.");
         Log().info("Listening "
                             + std::to_string(server.get_acceptor().local_endpoint().port())
                             + " port on " + server.get_acceptor().local_endpoint().address().to_string() + ".");

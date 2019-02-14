@@ -22,7 +22,7 @@ namespace filesender {
 	namespace config{
 
 		namespace{
-			std::vector<std::string> mimes = {".bmp", ".jpeg", ".jpg", ".png", ".gif"};
+			std::vector<std::string> mimes = {"bmp", "jpeg", "jpg", "png", "gif"};
 		}
 
 		ServerConfigurator::ServerConfigurator(const std::string &path_to_config, const std::string &default_file_dir)

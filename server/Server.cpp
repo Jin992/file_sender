@@ -50,6 +50,11 @@ namespace filesender {
 		mime_types_ = mt;
 	}
 
+	int Server::get_connection_timeout() const {
+		return client_connection_timeout_;
+	}
+
+
 	void Server::start_accept_() {
 	    try {
 			ConnectionPool pool;
@@ -65,7 +70,7 @@ namespace filesender {
 				if (poll_res > 0) {
 					// create connection object
 					ServerConnection::pointer new_connection = ServerConnection::create(acceptor_.get_io_service(),
-							30);
+							get_connection_timeout());
 					// assign incoming connection to connection object
 					acceptor_.accept(new_connection->socket());
 					Log().info("Accepted connection from " + new_connection->get_remote());

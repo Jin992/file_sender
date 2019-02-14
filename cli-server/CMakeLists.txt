@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wno-missing-field-initializers ")
 
 find_package (Threads)
-find_package(Boost 1.66 COMPONENTS system regex filesystem REQUIRED)
+find_package(Boost 1.58 COMPONENTS system regex filesystem REQUIRED)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/libs/include)
 
