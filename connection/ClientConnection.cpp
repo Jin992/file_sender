@@ -27,23 +27,5 @@ namespace filesender {
 		ClientConnection::pointer ClientConnection::create(io_service &io) {
 			return pointer(new ClientConnection(io));
 		}
-
-		std::string ClientConnection::get_remote() {
-			return socket().remote_endpoint().address().to_string();
-		}
-
-		std::string ClientConnection::get_host()  {
-			return socket().local_endpoint().address().to_string();
-		}
-
-		unsigned short ClientConnection::get_port() {
-			return socket().local_endpoint().port();
-		}
-
-		void ClientConnection::terminate_connection() {
-			if (socket().is_open()) {
-				socket().close();
-			}
-		}
 	}
 }

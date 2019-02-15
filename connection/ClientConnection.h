@@ -17,17 +17,11 @@ namespace filesender {
 
 			ClientConnection(const ClientConnection & rhs) = delete;
 			~ClientConnection() override = default;
-
 			static pointer create(io_service &);
-			std::string get_remote();
-			std::string get_host();
-			void terminate_connection();
-			unsigned short get_port();
-
+		
 		private:
 			explicit ClientConnection(io_service &);
 			bool is_active_;
-
 		};
 	}
 }
