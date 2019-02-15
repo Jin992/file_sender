@@ -5,9 +5,9 @@
 #include "FileException.h"
 
 namespace filesender {
-    namespace exception {
-        FileException::FileException(const std::string &msg)
-        : CustomException(msg)
-        {}
-    }
+	namespace exception {
+		FileException::FileException(const std::string &msg)
+		: CustomException(msg)
+		{}
+	}
 }

@@ -15,28 +15,28 @@
 using filesender::connection::ServerConnection;
 
 namespace filesender {
-    namespace connection{
-        class ConnectionPool {
-        public:
-            explicit ConnectionPool();
-            ConnectionPool(const ConnectionPool & rhs) = delete;
-            ~ConnectionPool();
-            void store(ServerConnection::pointer &, std::thread &&);
-            size_t size() const;
-            void connection_manager();
-            void start();
-            void stop();
+	namespace connection{
+		class ConnectionPool {
+		public:
+			explicit ConnectionPool();
+			ConnectionPool(const ConnectionPool & rhs) = delete;
+			~ConnectionPool();
+			void store(ServerConnection::pointer &, std::thread &&);
+			size_t size() const;
+			void connection_manager();
+			void start();
+			void stop();
 
 
-        private:
-            void erase_expired_conections_();
-            bool is_active_;
-            std::thread manager_thread_;
-            std::vector<std::pair<ServerConnection::pointer, std::thread>> pool_storage_;
-            std::mutex pool_guard_;
+		private:
+			void erase_expired_conections_();
+			bool is_active_;
+			std::thread manager_thread_;
+			std::vector<std::pair<ServerConnection::pointer, std::thread>> pool_storage_;
+			std::mutex pool_guard_;
 
-        };
-    }
+		};
+	}
 }
 
 

@@ -5,8 +5,8 @@
 #include "ConnectionException.h"
 
 namespace filesender {
-    namespace exception {
-        ConnectionException::ConnectionException(const std::string  &msg) : CustomException(msg)
-        {}
-    }
+	namespace exception {
+		ConnectionException::ConnectionException(const std::string  &msg) : CustomException(msg)
+		{}
+	}
 }

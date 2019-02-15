@@ -56,7 +56,7 @@ namespace filesender {
 
 
 	void Server::start_accept_() {
-	    try {
+		try {
 			ConnectionPool pool;
 			struct pollfd	sock_in[1];
 			int poll_res = 0;
@@ -86,15 +86,15 @@ namespace filesender {
 			// but all existing connections will be preccessed
 			pool.stop();
 		}
-	    catch (boost::system::system_error &e) {
-	    	Log().error(e.what());
-	    }
-	    catch (const std::exception &e) {
-	        Log().error(e.what());
-	    }
+		catch (boost::system::system_error &e) {
+			Log().error(e.what());
+		}
+		catch (const std::exception &e) {
+			Log().error(e.what());
+		}
 	}
 
-    const tcp::acceptor & Server::get_acceptor() const {
-	    return acceptor_;
+	const tcp::acceptor & Server::get_acceptor() const {
+		return acceptor_;
 	}
 }

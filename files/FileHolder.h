@@ -10,15 +10,15 @@
 
 namespace filesender {
 	namespace file {
-	    using file_error = int;
+		using file_error = int;
 
 		class FileHolder {
 		public:
-            explicit FileHolder(size_t chunk_size);
-            FileHolder(FileHolder const &rhs) = delete;
-            virtual ~FileHolder();
+			explicit FileHolder(size_t chunk_size);
+			FileHolder(FileHolder const &rhs) = delete;
+			virtual ~FileHolder();
 
-            FileHolder &operator=(FileHolder const  &rhs) = delete;
+			FileHolder &operator=(FileHolder const  &rhs) = delete;
 
 			void open(const std::string &, const std::string &);
 			void close();

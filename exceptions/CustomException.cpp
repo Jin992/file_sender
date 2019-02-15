@@ -4,13 +4,13 @@
 
 #include "CustomException.h"
 namespace filesender {
-    namespace exception {
+	namespace exception {
 
-        CustomException::CustomException(const std::string &msg) : msg_(msg)
-        {}
+		CustomException::CustomException(const std::string &msg) : msg_(msg)
+		{}
 
-        char const *CustomException::what() const noexcept {
-            return msg_.c_str();
-        }
-    }
+		char const *CustomException::what() const noexcept {
+			return msg_.c_str();
+		}
+	}
 }

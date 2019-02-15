@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 
-set(PROJECT_NAME "file_sender")
+set(PROJECT_NAME "server")
 
 project(${PROJECT_NAME})
 
@@ -30,4 +30,4 @@ add_library(netlib STATIC
 )
 
 add_executable(${PROJECT_NAME}  main.cpp)
-target_link_libraries(file_sender netlib ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} -lpthread -lboost_thread -lboost_serialization)
+target_link_libraries(${PROJECT_NAME} netlib ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} -lpthread -lboost_thread -lboost_serialization)

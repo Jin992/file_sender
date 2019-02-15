@@ -8,13 +8,13 @@
 #include "CustomException.h"
 
 namespace filesender {
-    namespace exception {
-        class ConnectionException : public CustomException {
-        public:
-            explicit ConnectionException(const std::string &msg);
-        };
+	namespace exception {
+		class ConnectionException : public CustomException {
+		public:
+			explicit ConnectionException(const std::string &msg);
+		};
 
-    }
+	}
 
 }
 

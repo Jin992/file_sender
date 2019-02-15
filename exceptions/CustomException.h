@@ -9,18 +9,18 @@
 #include <string>
 
 namespace filesender {
-    namespace exception {
+	namespace exception {
 
-        class CustomException : public std::exception {
-        public:
-            explicit CustomException(const std::string &msg);
+		class CustomException : public std::exception {
+		public:
+			explicit CustomException(const std::string &msg);
 
-            char const *what() const noexcept final;
+			char const *what() const noexcept final;
 
-        private:
-            std::string msg_;
-        };
-    }
+		private:
+			std::string msg_;
+		};
+	}
 }
 
 #endif //FILE_SENDER_CUSTOMEXCEPTIONS_H

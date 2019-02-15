@@ -5,7 +5,7 @@ project(file_sender_client)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wno-missing-field-initializers ")
 find_package (Threads)
-find_package(Boost 1.62 COMPONENTS system regex filesystem REQUIRED)
+find_package(Boost 1.58 COMPONENTS system regex filesystem REQUIRED)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/libs/include)
 
@@ -25,6 +25,6 @@ add_library(netlib STATIC
      ../libs/sources/directory_helpers.cpp
 )
 
-add_executable(file_sender  main.cpp)
+add_executable(client  main.cpp)
 
-target_link_libraries(file_sender netlib ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} -lpthread -lboost_thread -lboost_serialization)
+target_link_libraries(client netlib ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} -lpthread -lboost_thread -lboost_serialization)
