@@ -9,16 +9,12 @@ find_package(Boost 1.58 COMPONENTS system regex filesystem REQUIRED)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/libs/include)
 
-add_library(netlib STATIC
+add_library(netlib-cli STATIC
      ../connection/AbstractConnection.cpp
-     ../server/Server.cpp
-     ../server/ServerConfigurator.cpp
-     ../log/Log.cpp
      ../files/FileHolder.cpp
      ../exceptions/CustomException.cpp
      ../exceptions/ConnectionException.cpp
      ../exceptions/FileException.cpp
-     ../connection/ServerConnection.cpp
      ../connection/ClientConnection.cpp
      ../exceptions/ConfigException.cpp
      ../connection/ConnectionPool.cpp
@@ -27,4 +23,4 @@ add_library(netlib STATIC
 
 add_executable(client  main.cpp)
 
-target_link_libraries(client netlib ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} -lpthread -lboost_thread -lboost_serialization)
+target_link_libraries(client netlib-cli ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} -lpthread -lboost_thread -lboost_serialization)
